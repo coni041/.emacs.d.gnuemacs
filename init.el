@@ -571,8 +571,8 @@
 ;; テーマ選択
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'solarized-dark t)
-(load-theme 'gnupack-dark t)
-
+;;(load-theme 'gnupack-dark t)
+(load-theme 'zenburn t)
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ server                                                        ;;;
