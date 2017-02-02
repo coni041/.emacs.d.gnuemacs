@@ -131,7 +131,7 @@
                 (left-fringe          . 10 ) ; 左フリンジ幅
                 (right-fringe         . 11 ) ; 右フリンジ幅
                 (menu-bar-lines       . 1  ) ; メニューバー
-                (tool-bar-lines       . 1  ) ; ツールバー
+                (tool-bar-lines       . 0  ) ; ツールバー
                 (vertical-scroll-bars . 1  ) ; スクロールバー
                 (scroll-bar-width     . 17 ) ; スクロールバー幅
                 (cursor-type          . box) ; カーソル種別
@@ -144,8 +144,8 @@
       '("emacs " emacs-version (buffer-file-name " - %f")))
 
 ;; 初期画面の非表示（有効：t、無効：nil）
-(setq inhibit-startup-message nil)
-(setq inhibit-startup-screen nil)
+(setq inhibit-startup-message t)
+(setq inhibit-startup-screen t)
 
 ;; フルスクリーン化
 (global-set-key (kbd "<M-return>") 'toggle-frame-fullscreen)
@@ -313,38 +313,38 @@
 (set-face-attribute 'linum nil :height 0.75)
 
 
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-;;; @ screen - tabbar                                               ;;;
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+;; ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+;; ;;; @ screen - tabbar                                               ;;;
+;; ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 
-(require 'tabbar)
+;; (require 'tabbar)
 
-;; tabbar有効化（有効：t、無効：nil）
-(call-interactively 'tabbar-mode t)
+;; ;; tabbar有効化（有効：t、無効：nil）
+;; (call-interactively 'tabbar-mode t)
 
-;; ボタン非表示
-(dolist (btn '(tabbar-buffer-home-button
-               tabbar-scroll-left-button
-               tabbar-scroll-right-button))
-  (set btn (cons (cons "" nil) (cons "" nil)))
-  )
+;; ;; ボタン非表示
+;; (dolist (btn '(tabbar-buffer-home-button
+;;                tabbar-scroll-left-button
+;;                tabbar-scroll-right-button))
+;;   (set btn (cons (cons "" nil) (cons "" nil)))
+;;   )
 
-;; タブ切替にマウスホイールを使用（有効：0、無効：-1）
-(call-interactively 'tabbar-mwheel-mode -1)
-(remove-hook 'tabbar-mode-hook      'tabbar-mwheel-follow)
-(remove-hook 'mouse-wheel-mode-hook 'tabbar-mwheel-follow)
+;; ;; タブ切替にマウスホイールを使用（有効：0、無効：-1）
+;; (call-interactively 'tabbar-mwheel-mode -1)
+;; (remove-hook 'tabbar-mode-hook      'tabbar-mwheel-follow)
+;; (remove-hook 'mouse-wheel-mode-hook 'tabbar-mwheel-follow)
 
-;; タブグループを使用（有効：t、無効：nil）
-(defvar tabbar-buffer-groups-function nil)
-(setq tabbar-buffer-groups-function nil)
+;; ;; タブグループを使用（有効：t、無効：nil）
+;; (defvar tabbar-buffer-groups-function nil)
+;; (setq tabbar-buffer-groups-function nil)
 
-;; タブの表示間隔
-(defvar tabbar-separator nil)
-(setq tabbar-separator '(1.0))
+;; ;; タブの表示間隔
+;; (defvar tabbar-separator nil)
+;; (setq tabbar-separator '(1.0))
 
-;; タブ切り替え
-(global-set-key (kbd "<C-tab>") 'tabbar-forward-tab)
-(global-set-key (kbd "C-q")     'tabbar-backward-tab)
+;; ;; タブ切り替え
+;; (global-set-key (kbd "<C-tab>") 'tabbar-forward-tab)
+;; (global-set-key (kbd "C-q")     'tabbar-backward-tab)
 
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
