@@ -637,3 +637,4 @@
 ;;; @ Custom keybinds                                               ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 (global-set-key (kbd "C-x C-b") 'bs-show)
+(global-set-key (kbd "C-z") 'undo)
