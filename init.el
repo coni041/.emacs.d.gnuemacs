@@ -132,12 +132,15 @@
                 (right-fringe         . 11 ) ; 右フリンジ幅
                 (menu-bar-lines       . 1  ) ; メニューバー
                 (tool-bar-lines       . 0  ) ; ツールバー
-                (vertical-scroll-bars . 1  ) ; スクロールバー
-                (scroll-bar-width     . 17 ) ; スクロールバー幅
+                (vertical-scroll-bars . 0  ) ; スクロールバー
+                (scroll-bar-width     . 0  ) ; スクロールバー幅
                 (cursor-type          . box) ; カーソル種別
                 (alpha                . 100) ; 透明度
                 ) default-frame-alist) )
 (setq initial-frame-alist default-frame-alist)
+
+;; スクロールバーを非表示
+(scroll-bar-mode 0)
 
 ;; フレーム タイトル
 (setq frame-title-format
@@ -584,6 +587,19 @@
 )
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(minimap-width-fraction 0.1)
+ '(minimap-window-location (quote right)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 ;; Local Variables:
 ;; coding: utf-8
 ;; mode: emacs-lisp
@@ -603,6 +619,19 @@
   (define-key iswitchb-mode-map [tab] 'iswitchb-next-match)
   (define-key iswitchb-mode-map [left] 'iswitchb-prev-match)
   )
+
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+;;; @ minimap                                                      ;;;
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+(require 'minimap)
+(minimap-mode 1)
+(defun minimap-toggle ()
+  "Toggle minimap for current buffer."
+  (interactive)
+  (if (null minimap-bufname)
+      (minimap-create)
+    (minimap-kill)))
+(global-set-key (kbd "C-c n") 'minimap-toggle)
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;
