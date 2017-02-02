@@ -590,3 +590,21 @@
 ;; End:
 
 ;;; ends here
+
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+;;; @ iswitchb                                                      ;;;
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+(iswitchb-mode 1)
+(add-hook 'iswitchb-define-mode-map-hook
+          'iswitchb-my-keys)
+(defun iswitchb-my-keys ()
+  "Add my keybindings for iswitchb."
+  (define-key iswitchb-mode-map [right] 'iswitchb-next-match)
+  (define-key iswitchb-mode-map [tab] 'iswitchb-next-match)
+  (define-key iswitchb-mode-map [left] 'iswitchb-prev-match)
+  )
+
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+;;; @ Custom keybinds                                               ;;;
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+(global-set-key (kbd "C-x C-b") 'bs-show)
