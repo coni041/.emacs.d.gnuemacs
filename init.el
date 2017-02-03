@@ -586,13 +586,18 @@
   (server-start)
 )
 
-
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+;;; @ minimap                                                      ;;;
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+(require 'minimap)
+(minimap-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(minimap-width-fraction 0.1)
+ '(minimap-width-fraction 0.2)
+ '(minimap-minimum-width 15)
  '(minimap-window-location (quote right)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -600,6 +605,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; mode: emacs-lisp
@@ -620,18 +626,6 @@
   (define-key iswitchb-mode-map [left] 'iswitchb-prev-match)
   )
 
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-;;; @ minimap                                                      ;;;
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
-(require 'minimap)
-(minimap-mode 1)
-(defun minimap-toggle ()
-  "Toggle minimap for current buffer."
-  (interactive)
-  (if (null minimap-bufname)
-      (minimap-create)
-    (minimap-kill)))
-(global-set-key (kbd "C-c n") 'minimap-toggle)
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;

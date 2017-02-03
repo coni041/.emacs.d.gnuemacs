@@ -111,11 +111,11 @@
 ;; 非アクティブウィンドウのオーバーレイ描画用のフェイス．
 (defvar hiwin-face nil)
 (make-face 'hiwin-face)
-(set-face-attribute 'hiwin-face nil :background "gray60")
+(set-face-attribute 'hiwin-face nil :background "gray35")
 
 (defvar hiwin-focus-out-face nil)
 (make-face 'hiwin-focus-out-face)
-(set-face-attribute 'hiwin-focus-out-face nil :foreground "#B3B3B3" :background "gray60")
+(set-face-attribute 'hiwin-focus-out-face nil :foreground "#B3B3B3" :background "gray35")
 
 (defun hiwin-create-ol ()
   (let (
@@ -283,4 +283,3 @@
                       hiwin-error) )
          )))))
 (provide 'hiwin)
-
