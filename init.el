@@ -634,6 +634,20 @@
   (define-key iswitchb-mode-map [backtab] 'iswitchb-prev-match)
   )
 
+  ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+  ;;; @ GLOBAL GTAGS                                                  ;;;
+  ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+  (add-to-list 'load-path "/usr/local/share/gtags")
+  (autoload 'gtags-mode "gtags" "" t)
+  (add-hook 'c-mode-hook 'gtags-mode)
+  (add-hook 'c++-mode-hook 'gtags-mode)
+  (setq gtags-mode-hook
+      '(lambda ()
+          (local-set-key (kbd "M-t") 'gtags-find-tag)    ;関数へジャンプ
+          (local-set-key (kbd "M-r") 'gtags-find-rtag)   ;関数の参照元へジャンプ
+          (local-set-key (kbd "M-s") 'gtags-find-symbol) ;変数の定義元/参照先へジャンプ
+          (local-set-key (kbd "C-t") 'gtags-pop-stack)   ;前のバッファに戻る
+          ))
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;
