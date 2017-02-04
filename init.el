@@ -631,6 +631,7 @@
   (define-key iswitchb-mode-map [right] 'iswitchb-next-match)
   (define-key iswitchb-mode-map [tab] 'iswitchb-next-match)
   (define-key iswitchb-mode-map [left] 'iswitchb-prev-match)
+  (define-key iswitchb-mode-map [backtab] 'iswitchb-prev-match)
   )
 
 
