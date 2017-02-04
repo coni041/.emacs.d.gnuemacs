@@ -650,6 +650,22 @@
           ))
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+;;; @ moccur                                                        ;;;
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
+(when (require 'color-moccur nil t)
+  ;; グローバルマップにoccur-by-moccurを割り当て
+  (define-key global-map (kbd "M-o") 'occur-by-moccur)
+  ;; スペース区切りで＆検索
+  (setq moccur-split-word t)
+  ;;ディレクトリ検索のときに除外するファイル
+  (add-to-list 'dmoccur-exclusion-mask "\\.DS_Store")
+  (add-to-list 'dmoccur-exclusion-mask "^#.+#$")
+  (require 'moccur-edit nil t)
+  ;; Migemoをつかう
+  (setq moccur-use-migemo t))
+
+
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 (global-set-key (kbd "C-x C-b") 'bs-show)
