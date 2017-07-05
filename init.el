@@ -672,6 +672,16 @@
 ;; To customize the background color
 (set-face-background 'highlight-current-line-face "gray35")
 
+;;;
+;;;
+;;;
+(require 'highlight-symbol)
+(global-set-key (kbd "C-c h w") 'highlight-symbol-at-point)
+(global-set-key (kbd "C-c h c") 'highlight-symbol-remove-all)
+(global-set-key (kbd "M-n") 'highlight-symbol-next)
+(global-set-key (kbd "M-p") 'highlight-symbol-prev)
+(global-set-key (kbd "C-M-h") 'highlight-symbol-query-replace)
+
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;
