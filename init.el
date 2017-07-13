@@ -690,3 +690,4 @@
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 (global-set-key (kbd "C-x C-b") 'bs-show)
 (global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-c n") 'open-junk-file)
