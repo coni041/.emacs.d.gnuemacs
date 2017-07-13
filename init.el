@@ -362,7 +362,7 @@
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 
 ;; 大文字・小文字を区別しないでサーチ（有効：t、無効：nil）
-(setq-default case-fold-search nil)
+(setq-default case-fold-search t)
 
 ;; インクリメント検索時に縦スクロールを有効化（有効：t、無効：nil）
 (setq isearch-allow-scroll nil)
@@ -511,7 +511,7 @@
 (setq hscroll-step 1)
 
 ;; スクロールダウン
-(global-set-key (kbd "C-z") 'scroll-down)
+;;(global-set-key (kbd "C-z") 'scroll-down)
 
 ;; バッファの最後までスクロールダウン
 (defadvice scroll-down (around scroll-down activate compile)
@@ -641,12 +641,14 @@
   (autoload 'gtags-mode "gtags" "" t)
   (add-hook 'c-mode-hook 'gtags-mode)
   (add-hook 'c++-mode-hook 'gtags-mode)
+  (add-hook 'dired-mode-hook 'gtags-mode)
   (setq gtags-mode-hook
       '(lambda ()
           (local-set-key (kbd "M-t") 'gtags-find-tag)    ;関数へジャンプ
           (local-set-key (kbd "M-r") 'gtags-find-rtag)   ;関数の参照元へジャンプ
           (local-set-key (kbd "M-s") 'gtags-find-symbol) ;変数の定義元/参照先へジャンプ
           (local-set-key (kbd "C-t") 'gtags-pop-stack)   ;前のバッファに戻る
+	  (local-set-key (kbd "M-f") 'gtags-find-file)   ;ファイルを開く
           ))
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
