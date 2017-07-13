@@ -238,6 +238,16 @@
 (wrap-function-to-control-ime 'map-y-or-n-p nil nil)
 (wrap-function-to-control-ime 'read-char nil nil)
 
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; 括弧
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; 対応するカッコを強調
+(show-paren-mode t)
+(setq show-paren-style 'mixed)
+
+;; 対応するかっこを自動入力
+(electric-pair-mode t)
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ screen - cursor                                               ;;;
