@@ -692,6 +692,13 @@
 (setq comment-dwim-2--inline-comment-behavior 'reindent-comment)
 
 
+;;;
+;;; sequential-command-config
+;;;
+(require 'sequential-command-config)
+(sequential-command-setup-keys)
+
+
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
