@@ -685,6 +685,13 @@
 (global-set-key (kbd "C-M-h") 'highlight-symbol-query-replace)
 
 
+;;;
+;;; comment-dwim-2
+;;;
+(global-set-key (kbd "M-;") 'comment-dwim-2)
+(setq comment-dwim-2--inline-comment-behavior 'reindent-comment)
+
+
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
