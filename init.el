@@ -708,6 +708,10 @@
 (require 'sequential-command-config)
 (sequential-command-setup-keys)
 
+;;;
+;;; c-mode custom
+;;;
+(setq c-basic-offset 4)
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;
