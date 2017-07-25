@@ -782,6 +782,13 @@
 ;;;
 (global-auto-revert-mode 1)
 
+;;
+;; expand-region
+;;
+(require 'expand-region)
+(global-set-key (kbd "C-SPC") 'er/expand-region)
+(global-set-key (kbd "C-S-SPC") 'er/contract-region)
+
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
