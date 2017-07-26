@@ -723,47 +723,6 @@
 (add-hook 'c++-mode-hook '(lambda () (setq tab-width 4)))
 
 ;;;
-;;; edit-at-point
-;;;
-(require 'edit-at-point)
-(defvar edit-at-point-thing-alist
-  '(("w" . "word")
-    ("s" . "symbol")
-    ("S" . "str")
-    ("l" . "line")
-    ("p" . "paren")
-    ("d" . "defun")))
-(defvar edit-at-point-action-alist
-  '(("C-w" . "cut")
-    ("M-w" . "copy")
-    ("C-d" . "delete")
-    ("C-y" . "paste")
-    ("d" . "dup")))
-(defun edit-at-point-ensure-input (func)
-  (let (ans)
-    (while (progn (setq ans (funcall func))
-                  (not ans)))
-    ans))
-(defun edit-at-point-prompt (header alist)
-  (edit-at-point-ensure-input
-   (lambda ()
-     (assoc-default
-      (format-kbd-macro
-       (vector
-        (read-event
-         (format "%s :: %s" header
-                 (mapconcat (lambda (x) (format "%s:%s" (car x) (cdr x)))
-                            alist " ")))))
-      alist))))
-(defun edit-at-point-dispatch ()
-  (interactive)
-  (let* ((thing (edit-at-point-prompt "Edit at point" edit-at-point-thing-alist))
-         (action (edit-at-point-prompt "Action" edit-at-point-action-alist)))
-    (funcall (intern (format "edit-at-point-%s-%s" thing action)))))
-(global-set-key (kbd "C-:") 'edit-at-point-dispatch)
-
-
-;;;
 ;;; auto-complete
 ;;;
 (require 'auto-complete)
