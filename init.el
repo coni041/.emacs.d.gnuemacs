@@ -151,7 +151,7 @@
 (setq inhibit-startup-screen t)
 
 ;; フルスクリーン化
-(global-set-key (kbd "<M-return>") 'toggle-frame-fullscreen)
+;;(global-set-key (kbd "<M-return>") 'toggle-frame-fullscreen)
 
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
@@ -788,6 +788,13 @@
 (require 'expand-region)
 (global-set-key (kbd "C-SPC") 'er/expand-region)
 (global-set-key (kbd "C-S-SPC") 'er/contract-region)
+
+;;
+;; srefactor
+;;
+(require 'srefactor)
+(define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+(define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
 ;;; @ Custom keybinds                                               ;;;
