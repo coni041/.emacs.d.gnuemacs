@@ -125,8 +125,8 @@
                 ) default-frame-alist) )
 (setq initial-frame-alist default-frame-alist)
 
-;; スクロールバーを非表示
-(scroll-bar-mode 0)
+;; スクロールバーを表示
+(scroll-bar-mode 1)
 
 ;; フレーム タイトル
 (setq frame-title-format
