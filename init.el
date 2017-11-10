@@ -719,6 +719,7 @@
 ;; magit
 ;;
 (require 'magit)
+(setq magit-git-executable "/c/Program Files/Git/cmd/git.exe")
 (global-set-key (kbd "C-x g") 'magit-status)
 
 
